@@ -1,0 +1,188 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<!-- Usuarios -->
+<div class="container mt-5">
+    <h1 class="text-center text-success">Lista de Usuarios</h1>
+    <button id="crearUsuario" class="btn btn-success mb-3">Crear Usuario</button>
+    <table id="usuarios" class="table table-bordered table-hover">
+        <thead class="bg-success text-white">
+            <tr>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Contraseña</th>
+                <th>Acciones</th> <!-- Columna para acciones -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se agregarán aquí -->
+            <tr>
+                <td>Usuario 1</td>
+                <td>Rol 1</td>
+                <td>*****</td>
+                <td>
+                    <button class="btn btn-success btn-sm" onclick="editarUsuario(1)">Editar</button>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarUsuario(1)">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Usuario 2</td>
+                <td>Rol 2</td>
+                <td>*****</td>
+                <td>
+                    <button class="btn btn-success btn-sm" onclick="editarUsuario(2)">Editar</button>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarUsuario(2)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para crear/editar usuario -->
+<div class="modal" id="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="modalTitle">Crear Usuario</h5>
+                <button type="button" class="close" id="cerrarModal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="rol">Rol:</label>
+                    <input type="text" class="form-control" id="rol" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cerrarModal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="guardarUsuario">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Productos -->
+
+<div class="container mt-5">
+    <h1 class="text-center text-success">Lista de Productos</h1>
+    <button id="crearProducto" class="btn btn-success mb-3">Crear Producto</button>
+    <table id="productos" class="table table-bordered table-hover">
+        <thead class="bg-success text-white">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Costo</th>
+                <th>Acciones</th> <!-- Columna para acciones -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se agregarán aquí -->
+            <tr>
+                <td>1</td>
+                <td>Producto 1</td>
+                <td>Descripción del producto 1</td>
+                <td>$10.00</td>
+                <td>
+                    <button class="btn btn-success btn-sm" onclick="editarProducto(1)">Editar</button>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarProducto(1)">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Producto 2</td>
+                <td>Descripción del producto 2</td>
+                <td>$20.00</td>
+                <td>
+                    <button class="btn btn-success btn-sm" onclick="editarProducto(2)">Editar</button>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarProducto(2)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para crear/editar producto -->
+<div class="modal" id="modalProducto" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="modalProductoTitle">Crear Producto</h5>
+                <button type="button" class="close" id="cerrarModalProducto" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="productoName">Nombre:</label>
+                    <input type="text" class="form-control" id="productoName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productoDescription">Descripción:</label>
+                    <textarea class="form-control" id="productoDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productoCost">Costo:</label>
+                    <input type="number" class="form-control" id="productoCost" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cerrarModalProducto">Cancelar</button>
+                <button type="button" class="btn btn-success" id="guardarProducto">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Estilos adicionales -->
+<style>
+    .btn-success {
+        background-color: #28a745; /* Verde oscuro */
+        border-color: #28a745;
+    }
+
+        .btn-success:hover {
+            background-color: #218838; /* Verde más oscuro en hover */
+            border-color: #1e7e34;
+        }
+
+    .btn-danger {
+        background-color: #dc3545; /* Rojo para eliminar */
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Rojo más oscuro en hover */
+            border-color: #bd2130;
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa; /* Color claro en hover */
+    }
+
+    .modal-header {
+        background-color: #28a745; /* Verde oscuro para el encabezado del modal */
+    }
+
+    .modal-title {
+        color: white; /* Texto blanco en el encabezado del modal */
+    }
+
+    .text-success {
+        color: #28a745; /* Color verde para el texto */
+    }
+</style>
+
+
+<script src="/js/app.js" defer></script>

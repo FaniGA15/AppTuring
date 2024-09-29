@@ -1,0 +1,84 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+body {
+    background-color: #f8f9fa; /* Color de fondo claro */
+}
+
+.bg-verde-oscuro {
+    background-color: #005500;
+    color: white;
+}
+
+.bg-verde-medio {
+    background-color: #008800;
+    color: white;
+}
+
+.bg-verde-claro {
+    background-color: #00CC00;
+    color: black;
+}
+
+.bg-verde-muy-claro {
+    background-color: #99FF99;
+    color: black;
+}
+
+.modal-header {
+    background-color: #005500; /* Verde oscuro */
+    color: white;
+}
+
+.modal-footer {
+    background-color: #008800; /* Verde medio */
+}
